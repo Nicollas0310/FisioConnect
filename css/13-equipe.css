@@ -1,0 +1,39 @@
+/* Equipe */
+
+/* ---------- TEAM ---------- */
+.team{background:var(--paper);}
+.team-grid{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:48px 40px;
+  max-width:980px; margin:0 auto;
+}
+.team-card{text-align:center; width:260px;}
+@media (max-width:600px){ .team-card{width:100%; max-width:300px;} }
+.team-photo{
+  position:relative; width:168px; height:168px; margin:0 auto 20px;
+}
+.team-photo::before{
+  content:''; position:absolute; top:-6px; right:-6px; bottom:-6px; left:-6px; border-radius:50%;
+  background:conic-gradient(from 0deg, var(--tape), var(--sage) 30%, var(--tape-dark) 60%, var(--tape));
+  animation:spin-ring 7s linear infinite;
+}
+.team-card:hover .team-photo::before{animation-play-state:paused;}
+.team-photo img, .team-photo .avatar-initials{
+  position:relative; z-index:1; display:block;
+  width:100%; height:100%; border-radius:50%; object-fit:cover;
+  border:5px solid var(--paper);
+  transition:transform .3s ease;
+}
+.team-card:hover .team-photo img,
+.team-card:hover .team-photo .avatar-initials{transform:scale(1.04);}
+.avatar-initials{
+  display:flex; align-items:center; justify-content:center;
+  background:var(--bone); color:var(--tape-dark);
+  font-family:'Fraunces', serif; font-size:2.5rem; font-weight:600;
+}
+@keyframes spin-ring{ to{ transform:rotate(360deg); } }
+.team-card h3{font-family:'Fraunces', serif; font-size:1.2rem; font-weight:600; margin-bottom:4px;}
+.team-role{
+  font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em;
+  color:var(--tape-dark); font-weight:700; margin-bottom:12px; display:block;
+}
+.team-card p.bio{font-size:0.9rem; opacity:0.78; max-width:32ch; margin:0 auto;}

@@ -1,0 +1,52 @@
+/* Botões flutuantes de WhatsApp, Instagram e YouTube */
+
+/* ---------- FLOATING SOCIAL BUTTONS ---------- */
+.social-float{
+  position:fixed; right:22px; z-index:60;
+  width:60px; height:60px; border-radius:50%;
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 18px rgba(18,44,41,0.28);
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease;
+  animation:float-in .5s ease both;
+}
+.social-float svg{width:28px; height:28px;}
+.social-float:hover{transform:scale(1.08);}
+
+.whatsapp-float{
+  bottom:22px; background:var(--whatsapp);
+  animation:float-in .5s ease .3s both, float-pulse-whatsapp 2.6s ease-in-out 1.2s infinite;
+}
+.whatsapp-float:hover{box-shadow:0 8px 22px rgba(18,44,41,0.34);}
+.instagram-float{
+  bottom:96px;
+  background:linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5);
+  animation:float-in .5s ease .18s both, float-pulse-instagram 2.6s ease-in-out 1.4s infinite;
+}
+.youtube-float{
+  bottom:170px; background:#FF0000;
+  animation:float-in .5s ease .06s both, float-pulse-youtube 2.6s ease-in-out 1.6s infinite;
+}
+@keyframes float-in{
+  from{opacity:0; transform:translateY(16px) scale(0.8);}
+  to{opacity:1; transform:translateY(0) scale(1);}
+}
+@keyframes float-pulse-whatsapp{
+  0%, 100%{box-shadow:0 6px 18px rgba(18,44,41,0.28), 0 0 0 0 rgba(37,211,102,0.45);}
+  50%{box-shadow:0 6px 18px rgba(18,44,41,0.28), 0 0 0 10px rgba(37,211,102,0);}
+}
+@keyframes float-pulse-instagram{
+  0%, 100%{box-shadow:0 6px 18px rgba(18,44,41,0.28), 0 0 0 0 rgba(214,41,118,0.45);}
+  50%{box-shadow:0 6px 18px rgba(18,44,41,0.28), 0 0 0 10px rgba(214,41,118,0);}
+}
+@keyframes float-pulse-youtube{
+  0%, 100%{box-shadow:0 6px 18px rgba(18,44,41,0.28), 0 0 0 0 rgba(255,0,0,0.45);}
+  50%{box-shadow:0 6px 18px rgba(18,44,41,0.28), 0 0 0 10px rgba(255,0,0,0);}
+}
+@media (max-width:600px){
+  .social-float{right:16px; width:52px; height:52px;}
+  .social-float svg{width:24px; height:24px;}
+  .whatsapp-float{bottom:16px;}
+  .instagram-float{bottom:80px;}
+  .youtube-float{bottom:144px;}
+}

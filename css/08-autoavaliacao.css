@@ -1,0 +1,45 @@
+/* Bloco de chamada para a autoavaliação */
+
+/* ---------- SELF ASSESSMENT INTRO ---------- */
+.self-assess{padding:56px 0;}
+.self-assess-card{
+  background:linear-gradient(135deg, rgba(189,138,46,0.10), rgba(189,138,46,0.02));
+  border:1px solid var(--line); border-radius:24px;
+  padding:36px; max-width:980px; margin:0 auto;
+  display:grid; grid-template-columns:0.85fr 1.15fr; gap:40px; align-items:center;
+}
+.self-assess-media{
+  position:relative; border-radius:20px; overflow:hidden; aspect-ratio:3/4;
+  box-shadow:0 16px 40px rgba(58,49,32,0.2);
+}
+.self-assess-media img{width:100%; height:100%; object-fit:cover; display:block;}
+.self-assess-media::after{
+  content:''; position:absolute; inset:0; border-radius:20px;
+  box-shadow:inset 0 0 0 2px rgba(189,138,46,0.4); pointer-events:none;
+}
+.self-assess-media::before{
+  content:''; position:absolute; inset:-16px; z-index:-1; border-radius:32px;
+  background:radial-gradient(circle, rgba(189,138,46,0.35), transparent 70%);
+  filter:blur(18px); opacity:0.6; animation:media-glow 3.4s ease-in-out infinite;
+}
+@keyframes media-glow{
+  0%, 100%{opacity:0.35; transform:scale(0.97);}
+  50%{opacity:0.65; transform:scale(1.02);}
+}
+.self-assess-text{text-align:left;}
+.self-assess-text h2{margin:10px 0 12px;}
+.self-assess-text p{opacity:0.8; font-size:1.05rem; max-width:42ch; margin:0 0 28px;}
+.btn-quiz{
+  background:var(--tape); color:var(--paper); border:none; cursor:pointer;
+  padding:16px 32px; border-radius:100px; font-weight:700; font-size:1rem;
+  box-shadow:0 4px 0 var(--tape-dark); font-family:inherit;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn-quiz:hover{transform:translateY(-2px); box-shadow:0 6px 0 var(--tape-dark);}
+.btn-quiz:active{transform:translateY(1px); box-shadow:0 2px 0 var(--tape-dark);}
+@media (max-width:760px){
+  .self-assess-card{grid-template-columns:1fr; padding:26px; gap:24px;}
+  .self-assess-media{aspect-ratio:16/9;}
+  .self-assess-text{text-align:center;}
+  .self-assess-text p{margin-left:auto; margin-right:auto;}
+}

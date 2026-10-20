@@ -1,0 +1,7 @@
+/* Chamada final */
+
+.final-cta{
+  text-align:center; padding:100px 0;
+}
+.final-cta h2{margin-bottom:20px;}
+.final-cta p{max-width:46ch; margin:0 auto 36px; opacity:0.8; font-size:1.05rem;}

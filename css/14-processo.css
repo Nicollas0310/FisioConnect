@@ -1,0 +1,12 @@
+/* Como funciona (passo a passo) */
+
+/* ---------- WHY / PROCESS ---------- */
+.process{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:28px;
+}
+@media (max-width:900px){ .process{grid-template-columns:1fr 1fr;} }
+@media (max-width:540px){ .process{grid-template-columns:1fr;} }
+.step{padding-top:20px; border-top:2px solid var(--ink);}
+.step .step-idx{font-size:0.8rem; opacity:0.55; margin-bottom:10px; display:block;}
+.step h4{font-family:'Fraunces', serif; font-size:1.15rem; margin-bottom:8px;}
+.step p{font-size:0.92rem; opacity:0.78;}
